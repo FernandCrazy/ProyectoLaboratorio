@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jScrollPane1" alignment="0" pref="1119" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jScrollPane1" alignment="0" pref="596" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="14" style="0"/>
+            </Property>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="AVISO DE PRIVACIDAD&#xa;&#xa;Laboratorio Renteria&#xa;&#xa;Laboratorio Renteria, en adelante &quot;El Laboratorio&quot;, con domicilio en [Direcci&#xf3;n], declara ser responsable del tratamiento de sus datos personales, &#xa;en cumplimiento con la Ley Federal de Protecci&#xf3;n de Datos Personales en Posesi&#xf3;n de los Particulares (en adelante la &quot;Ley&quot;) y dem&#xe1;s disposiciones aplicables.&#xa;&#xa;I. Identidad y Domicilio del Responsable.&#xa;&#xa;El responsable del tratamiento de sus datos personales es Laboratorio Renteria.&#xa;&#xa;II. Datos Personales Sometidos a Tratamiento.&#xa;&#xa;Los datos personales que El Laboratorio recaba de usted son los necesarios para llevar a cabo sus funciones espec&#xed;ficas en el &#xe1;mbito qu&#xed;mico, pudiendo incluir, de manera enunciativa m&#xe1;s no limitativa, los siguientes datos:&#xa;&#xa;- Informaci&#xf3;n de identificaci&#xf3;n personal (nombre, direcci&#xf3;n, correo electr&#xf3;nico, tel&#xe9;fono).&#xa;- Datos acad&#xe9;micos y profesionales.&#xa;- Informaci&#xf3;n relacionada con an&#xe1;lisis y resultados de pruebas qu&#xed;micas.&#xa;III. Finalidades del Tratamiento.&#xa;&#xa;Los datos personales recabados ser&#xe1;n utilizados &#xfa;nica y exclusivamente para los siguientes fines:&#xa;&#xa;Realizar an&#xe1;lisis qu&#xed;micos y pruebas correspondientes en el laboratorio.&#xa;Generar informes y resultados de las pruebas realizadas.&#xa;Cumplir con obligaciones legales en materia de control y registro de sustancias qu&#xed;micas.&#xa;Mantener comunicaci&#xf3;n con usted para informar sobre los resultados de las pruebas y cualquier informaci&#xf3;n relevante.&#xa;IV. Transferencia de Datos.&#xa;&#xa;El Laboratorio se compromete a no transferir sus datos personales a terceros, salvo en los casos previstos por la Ley y previo consentimiento expreso del titular.&#xa;&#xa;V. Medios para el Ejercicio de Derechos ARCO.&#xa;&#xa;Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO). Para ejercer estos derechos, deber&#xe1; presentar una solicitud por escrito en el domicilio de El Laboratorio, incluyendo la siguiente informaci&#xf3;n:&#xa;&#xa;Nombre del titular y direcci&#xf3;n de correo electr&#xf3;nico para comunicar la respuesta a su solicitud.&#xa;Documentos que acrediten la identidad o, en su caso, la representaci&#xf3;n legal del titular.&#xa;Descripci&#xf3;n clara y precisa de los datos personales respecto de los cuales se busca ejercer alguno de los derechos ARCO.&#xa;VI. Seguridad de los Datos Personales.&#xa;&#xa;El Laboratorio implementa medidas de seguridad administrativas, t&#xe9;cnicas y f&#xed;sicas para proteger sus datos personales y evitar su p&#xe9;rdida, alteraci&#xf3;n, destrucci&#xf3;n, uso, acceso o divulgaci&#xf3;n no autorizados.&#xa;&#xa;VII. Cambios al Aviso de Privacidad.&#xa;&#xa;El presente aviso de privacidad puede ser modificado en el futuro. Cualquier modificaci&#xf3;n ser&#xe1; notificada a trav&#xe9;s de los medios de contacto proporcionados por el titular.&#xa;&#xa;VIII. Legislaci&#xf3;n Aplicable.&#xa;&#xa;Este aviso de privacidad se rige por la legislaci&#xf3;n aplicable en Mexico.&#xa;&#xa;Fecha de &#xfa;ltima actualizaci&#xf3;n: 19-01-2024&#xa;&#xa;Ronaldo Gabriel Garcia Cuevas&#xa;Laboratorio Renteria&#xa;&#xa;&#xa;&#xa;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

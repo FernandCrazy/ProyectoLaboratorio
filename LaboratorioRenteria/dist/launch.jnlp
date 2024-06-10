@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>SAPLAC</title>
+        <vendor>Fernando Julian Gonzalez Fernandez</vendor>
+        <homepage href=""/>
+        <description>Es un Software de Administracion Para Laboratorio de Analisis Clinicos</description>
+        <description kind="short">SAPLAC</description>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="1.8+"/>
+        <jar href="LaboratorioRenteriaConIn.jar" main="true"/>
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar"/>
+<jar href="lib/AbsoluteLayout.jar"/>
+<jar href="lib/commons-beanutils-1.8.2.jar"/>
+<jar href="lib/commons-collections-3.2.1.jar"/>
+<jar href="lib/commons-digester-2.1.jar"/>
+<jar href="lib/commons-javaflow-20060411.jar"/>
+<jar href="lib/commons-logging-1.1.1.jar"/>
+<jar href="lib/groovy-all-1.7.5.jar"/>
+<jar href="lib/iText-2.1.7.jar"/>
+<jar href="lib/jasperreports-4.7.1.jar"/>
+<jar href="lib/jasperreports-javaflow-4.7.1.jar"/>
+<jar href="lib/png-encoder-1.5.jar"/>
+<jar href="lib/poi-3.7.jar"/>
+<jar href="lib/gradle-wrapper.jar"/>
+<jar href="lib/swingx-all-1.6.4.jar"/>
+<jar href="lib/commons-beanutils-1.8.2.jar"/>
+<jar href="lib/commons-collections-3.2.1.jar"/>
+<jar href="lib/commons-digester-2.1.jar"/>
+<jar href="lib/commons-javaflow-20060411.jar"/>
+<jar href="lib/commons-logging-1.1.1.jar"/>
+<jar href="lib/groovy-all-1.7.5.jar"/>
+<jar href="lib/iText-2.1.7.jar"/>
+<jar href="lib/jasperreports-4.7.1.jar"/>
+<jar href="lib/jasperreports-javaflow-4.7.1.jar"/>
+<jar href="lib/png-encoder-1.5.jar"/>
+<jar href="lib/poi-3.7.jar"/>
+<jar href="lib/jcalendar-1.4.jar"/>
+<jar href="lib/jgoodies-common-1.2.0.jar"/>
+<jar href="lib/jgoodies-looks-2.4.1.jar"/>
+<jar href="lib/junit-4.6.jar"/>
+<jar href="lib/javax-inject.jar"/>
+<jar href="lib/javax.activation-1.1.0.v201105071233.jar"/>
+<jar href="lib/javax.ejb.jar"/>
+<jar href="lib/javax.faces-api-2.0.jar"/>
+<jar href="lib/mail.jar"/>
+<jar href="lib/twilio-10.1.5.jar"/>
+<jar href="lib/commons-codec-1.15.jar"/>
+<jar href="lib/commons-io-2.7.jar"/>
+<jar href="lib/commons-logging-1.2.jar"/>
+<jar href="lib/httpclient-4.5.13.jar"/>
+<jar href="lib/httpcore-4.4.13.jar"/>
+<jar href="lib/jackson-annotations-2.14.0.jar"/>
+<jar href="lib/jackson-core-2.14.0.jar"/>
+<jar href="lib/jackson-databind-2.14.0.jar"/>
+<jar href="lib/jackson-dataformat-xml-2.14.0.jar"/>
+<jar href="lib/jackson-datatype-jsr310-2.14.0.jar"/>
+<jar href="lib/jjwt-api-0.11.2.jar"/>
+<jar href="lib/jjwt-impl-0.11.2.jar"/>
+<jar href="lib/jjwt-jackson-0.11.2.jar"/>
+<jar href="lib/slf4j-api-1.7.30.jar"/>
+<jar href="lib/stax2-api-4.2.1.jar"/>
+<jar href="lib/woodstox-core-6.4.0.jar"/>
+</resources>
+    <application-desc main-class="Splashscreen">
+    </application-desc>
+</jnlp>

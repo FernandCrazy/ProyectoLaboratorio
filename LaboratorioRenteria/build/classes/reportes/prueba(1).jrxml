@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6cdaaddd-33ab-41ed-aea0-ec5bda80c5cb">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numPaciente" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Analisis" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from bdconsultoriorenteria]]>
+	</queryString>
+	<field name="NoFolio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NoPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NombrePaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaNac" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Edad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NoMedico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NombreMedico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaRecepcion" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaEntrega" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Analisis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Clave" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Resultado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Prueba" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Unidades" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ValoresReferencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="resultadossangre_Clave" class="java.lang.Integer"/>
+	<field name="resultadossangre_Resultado" class="java.lang.String"/>
+	<field name="analisissangre_Clave" class="java.lang.Integer"/>
+	<field name="analisissangre_Prueba" class="java.lang.String"/>
+	<field name="analisissangre_Unidades" class="java.lang.String"/>
+	<field name="analisissangre_ValoresReferencia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="161" splitType="Stretch">
+			<staticText>
+				<reportElement x="78" y="0" width="168" height="20" uuid="b4db6c11-5142-473a-8bc2-92efe127fb79"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[LABORATORIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="168" height="20" uuid="a0eb6373-7e41-4eb9-a53e-7af498a438b5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RENTERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="20" width="168" height="20" uuid="9af93a4b-e0a9-478d-b9c4-2f2b6b8bce7a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="true"/>
+				</textElement>
+				<text><![CDATA[Analisis Clinicos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="40" width="445" height="20" uuid="7a665043-45ba-4c69-8ea2-ebdbf9b4aaef"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Av. No se Donde 178, Centro, La Huerta, Jalisco. CP: 48900 Tel:(317)388-5789]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="0" width="81" height="50" uuid="1efd9147-ff51-4ad3-b1e0-ebbad74f93fb"/>
+				<imageExpression><![CDATA["C:\\Users\\Fernando Gonzalez\\Desktop\\Trabajos escuela\\Trabajos 7tmo semestre\\Nueva carpeta\\proyectoCarrera\\LaboratorioRenteria\\src\\laboratorio23.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="30b0bbf5-3fed-4344-857e-352e5269a364"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="100" width="38" height="20" uuid="91b82780-2306-479c-bf6a-da5383d2920b"/>
+				<text><![CDATA[EDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="101" width="38" height="20" uuid="0e574f25-3243-4d9a-a080-445b055b2fbe"/>
+				<text><![CDATA[SEXO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="382" y="60" width="100" height="20" uuid="d8d0ba64-c5e2-4a55-8a87-7dfb124e5478"/>
+				<textFieldExpression><![CDATA[$F{NombreMedico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="60" width="64" height="20" uuid="e97850b8-8f99-45e7-b8b1-c3bef2adde5f"/>
+				<text><![CDATA[PACIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="100" width="105" height="20" uuid="7a79b603-6d77-4ce5-a00c-3c6588d613c9"/>
+				<text><![CDATA[FECHA DE TOMA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="134" width="139" height="20" uuid="69d90d9e-9060-4501-948a-21d0474dc611"/>
+				<text><![CDATA[VALORES DE REFERENCIA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="299" y="101" width="73" height="20" uuid="acae4ac2-66b2-4f6d-ae95-75e7ae30ec7c"/>
+				<textFieldExpression><![CDATA[$F{FechaNac}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="317" y="61" width="65" height="20" uuid="72417d6f-82db-4207-8740-82a2dfd7c25a"/>
+				<text><![CDATA[DOCTOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="199" y="60" width="100" height="20" uuid="f75a10c7-193b-49f4-bd89-fe0e2c0c60f9"/>
+				<textFieldExpression><![CDATA[$F{NombrePaciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="61" width="42" height="20" uuid="db068454-9df5-44a5-8336-d9cc4f7acb10"/>
+				<text><![CDATA[FOLIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="101" width="73" height="20" uuid="ac4e2744-f733-4e49-8e48-f62218b0eef3"/>
+				<textFieldExpression><![CDATA[$F{Edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="101" width="73" height="20" uuid="21983a1b-1742-4983-945b-801bf304c0e9"/>
+				<textFieldExpression><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="271" y="101" width="28" height="20" uuid="571c9444-557e-46cf-9d1d-bbe643fb88e9"/>
+				<text><![CDATA[NAC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="134" width="56" height="20" uuid="daee863d-72d8-40d5-9594-2d1655c5df73"/>
+				<text><![CDATA[PRUEBA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="134" width="68" height="20" uuid="7f8f142a-0180-4a68-8f2a-8b18911fe28d"/>
+				<text><![CDATA[RESULTADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="134" width="56" height="20" uuid="ea08ef3c-5861-4000-b178-325047496ab7"/>
+				<text><![CDATA[UNIDADES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="61" width="73" height="20" uuid="77c5e997-e030-4001-bf14-67051cc7f1b9"/>
+				<textFieldExpression><![CDATA[$F{NoFolio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="101" width="73" height="20" uuid="7abcb285-a07f-441e-9646-32dd9c760813"/>
+				<textFieldExpression><![CDATA[$F{FechaRecepcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="134" width="73" height="20" uuid="b51459a8-c67f-45d2-9979-0260e300ea5b"/>
+				<textFieldExpression><![CDATA[$F{Analisis}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="154" width="555" height="1" uuid="bda78475-8f56-423a-9c6c-88c88a398615"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="26">
+			<textField>
+				<reportElement x="153" y="6" width="73" height="20" uuid="2332b16a-3609-413e-bd5f-5ec9f3a835dd"/>
+				<textFieldExpression><![CDATA[$F{resultadossangre_Resultado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="6" width="73" height="20" uuid="f2a128ce-5b6c-4553-a75c-902a2c8274c0"/>
+				<textFieldExpression><![CDATA[$F{analisissangre_Unidades}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="6" width="73" height="20" uuid="446658f3-5555-4688-953f-b5b34079507c"/>
+				<textFieldExpression><![CDATA[$F{analisissangre_ValoresReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="6" width="73" height="20" uuid="e93739a0-c42a-4fd0-90aa-ceae875e9815"/>
+				<textFieldExpression><![CDATA[$F{analisissangre_Prueba}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

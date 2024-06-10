@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fad43360-00e6-4ad3-b8d6-69b5ed403e28">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Sexo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Nombre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ci.NoCita, e.Nombre, rp.Valor_de_Analisis, pe.Unidades, pe.ValoresReferencia, pa.Nombre AS nombrePaciente, pa.Sexo, pa.Edad, pa.FechaNac, me.Nombre AS nombreMedico, ci.Fecha
+FROM parametrosexamen pe 
+INNER JOIN exameninvidual e ON pe.NoExamen = e.NoExamen
+INNER JOIN resultadosparametro rp ON pe.NoPametroExa = rp.ParametrosExamen_NoPametroExa
+INNER JOIN tmedicos me ON me.Clave = rp.CitaExamen_tcita_NoMedico
+INNER JOIN tcita ci ON ci.NoCita = rp.CitaExamen_tcita_NoCita
+INNER JOIN tpacientes pa ON pa.NoPaciente = rp.CitaExamen_tcita_NoPaciente
+WHERE pe.Sexo = $P{Sexo} AND pa.Nombre = $P{Nombre};]]>
+	</queryString>
+	<field name="NoCita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Valor_de_Analisis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Unidades" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ValoresReferencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePaciente" class="java.lang.String"/>
+	<field name="Sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Edad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaNac" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreMedico" class="java.lang.String"/>
+	<field name="Fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="167" splitType="Stretch">
+			<staticText>
+				<reportElement x="356" y="1" width="168" height="20" uuid="31d5ef9e-0936-418a-b265-f60aaa26e730"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RENTERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="51" width="445" height="20" uuid="2f00a4e7-5203-4974-b24a-219d3dd39ab6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Av. No se Donde 178, Centro, La Huerta, Jalisco. CP: 48900 Tel:(317)388-5789]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="21" width="168" height="20" uuid="379801a1-cb52-4f5a-8c9d-418adbdcc9a1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="true"/>
+				</textElement>
+				<text><![CDATA[Analisis Clinicos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="1" width="168" height="20" uuid="157095c9-cb4f-4725-aae4-eebdb7df88c9"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[LABORATORIO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="1" width="81" height="50" uuid="460695cf-a84d-49e0-8665-da58ec5fe46c"/>
+				<imageExpression><![CDATA["C:\\Users\\Fernando Gonzalez\\Desktop\\Trabajos escuela\\Trabajos 7tmo semestre\\Nueva carpeta\\proyectoCarrera\\LaboratorioRenteria\\src\\laboratorio23.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="6" y="71" width="555" height="1" uuid="651738e8-2586-421a-9df4-4895661f238f"/>
+			</line>
+			<staticText>
+				<reportElement x="346" y="73" width="65" height="20" uuid="75e51285-80b7-4c56-a9c3-e2ac479ad502"/>
+				<text><![CDATA[DOCTOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="113" width="38" height="20" uuid="fa3c51e8-bb10-4a5d-9b5b-a3cef2dfa7df"/>
+				<text><![CDATA[SEXO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="146" width="56" height="20" uuid="6527ec4c-7f17-415a-b2b1-76471b535599"/>
+				<text><![CDATA[UNIDADES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="146" width="68" height="20" uuid="ac130c6f-6dce-41f2-8f64-3e9de79d5929"/>
+				<text><![CDATA[RESULTADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="112" width="38" height="20" uuid="45a328e7-104f-47b6-b14b-75cb73ca4aa9"/>
+				<text><![CDATA[EDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="73" width="64" height="20" uuid="c1a4c634-6887-4552-b03a-e40cba25f65d"/>
+				<text><![CDATA[PACIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="113" width="28" height="20" uuid="8a3e128a-75c7-48ef-ac1b-e669fc9d2cbb"/>
+				<text><![CDATA[NAC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="112" width="105" height="20" uuid="c420e659-7cf3-48a9-b2e3-a258096e46f5"/>
+				<text><![CDATA[FECHA DE TOMA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="146" width="56" height="20" uuid="bc3624e6-0553-47de-ac69-e52afd6e0a07"/>
+				<text><![CDATA[PRUEBA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="146" width="139" height="20" uuid="89bacc3c-6caa-425b-9995-dfb8922ed646"/>
+				<text><![CDATA[VALORES DE REFERENCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="72" width="42" height="20" uuid="d7ad5e88-d372-44f1-a97a-fa5cfce38ecb"/>
+				<text><![CDATA[FOLIO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="6" y="166" width="555" height="1" uuid="86276448-a8e5-48a8-84d7-5f0a8bd6c3c8"/>
+			</line>
+			<textField>
+				<reportElement x="151" y="72" width="190" height="20" uuid="83f8f2cd-393a-44d2-8399-c78701df8689"/>
+				<textFieldExpression><![CDATA[$F{nombrePaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="73" width="100" height="20" uuid="c61b4576-9ca6-40e6-98c3-8dccab8b248c"/>
+				<textFieldExpression><![CDATA[$F{nombreMedico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="112" width="71" height="20" uuid="d37cbe53-1615-47a1-98cd-0343ab02acfc"/>
+				<textFieldExpression><![CDATA[$F{Edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="112" width="57" height="20" uuid="660ddc91-12b3-48de-bd32-cfee07c71eb1"/>
+				<textFieldExpression><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="113" width="78" height="20" uuid="e37b59b8-0453-4142-9b26-bb941d867cb7"/>
+				<textFieldExpression><![CDATA[$F{FechaNac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="113" width="42" height="20" uuid="484408c4-4bb4-4e4d-be37-0d46dc0c3190"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="73" width="57" height="20" uuid="62607910-cbac-476c-b647-3eea63f9b2da"/>
+				<textFieldExpression><![CDATA[$F{NoCita}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="0" width="100" height="20" uuid="2f2705b3-6f3c-4a66-a9d0-c5fffa138c24"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="100" height="20" uuid="f269444c-05ec-4d5d-bd5e-8b4b0f7851fa"/>
+				<textFieldExpression><![CDATA[$F{Valor_de_Analisis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="0" width="100" height="20" uuid="768bf733-bc11-4e6e-8ccb-8e87c96dc690"/>
+				<textFieldExpression><![CDATA[$F{Unidades}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="100" height="20" uuid="3a80cd67-7b51-4bf0-a30c-439b35c3c2b1"/>
+				<textFieldExpression><![CDATA[$F{ValoresReferencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
