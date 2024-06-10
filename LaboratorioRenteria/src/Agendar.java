@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -27,7 +29,6 @@ public class Agendar extends javax.swing.JDialog {
         TFNombreExamen.setEnabled(true);
         this.setLocationRelativeTo(null);
         ConexionBDV cnx = new ConexionBDV();
-        cnx.llenarcomboMedicos(CBMedico);
         cnx.llenarcomboGrupo2(CBGrupo);
         cnx.llenarcomboPerfil2(CBPerfil);
         TFExamen.setEnabled(false);
@@ -58,11 +59,10 @@ public class Agendar extends javax.swing.JDialog {
     }
 
     public void limpiar() {
-        CBMedico.setSelectedItem("Medico");
         DefaultTableModel modeloVacio = new DefaultTableModel();
         TDatos.setModel(modeloVacio);
         TFPrueba.setText("");
-        TFNombrePa.setText("");
+        TFNombreMed.setText("");
 
     }
 
@@ -76,6 +76,7 @@ public class Agendar extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel14 = new javax.swing.JLabel();
+        TFNombreMed = new javax.swing.JTextField();
         TFNombrePa = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -83,13 +84,13 @@ public class Agendar extends javax.swing.JDialog {
         jLabel10 = new javax.swing.JLabel();
         SPHora = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
-        CBMedico = new javax.swing.JComboBox<>();
-        BPaciente = new javax.swing.JButton();
         BCancelar = new javax.swing.JButton();
         BNuevo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TDatos = new javax.swing.JTable();
         BQuitar = new javax.swing.JButton();
+        TFClavePa = new javax.swing.JTextField();
+        TFClaveMeed = new javax.swing.JTextField();
         BExamenes = new javax.swing.JButton();
         TFPrueba = new javax.swing.JTextField();
         CBGrupo = new javax.swing.JComboBox<>();
@@ -102,7 +103,6 @@ public class Agendar extends javax.swing.JDialog {
         TFExamen = new javax.swing.JTextField();
         TFClaveExamen = new javax.swing.JTextField();
         TFNombreExamen = new javax.swing.JTextField();
-        TFClavePa = new javax.swing.JTextField();
         BHabilitar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -114,7 +114,30 @@ public class Agendar extends javax.swing.JDialog {
         jLabel14.setText("Nombre:");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, 26));
 
+        TFNombreMed.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TFNombreMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFNombreMedActionPerformed(evt);
+            }
+        });
+        TFNombreMed.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TFNombreMedKeyPressed(evt);
+            }
+        });
+        getContentPane().add(TFNombreMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 370, 30));
+
         TFNombrePa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TFNombrePa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFNombrePaActionPerformed(evt);
+            }
+        });
+        TFNombrePa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TFNombrePaKeyPressed(evt);
+            }
+        });
         getContentPane().add(TFNombrePa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 370, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -140,32 +163,6 @@ public class Agendar extends javax.swing.JDialog {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("No. Medico:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 83, -1));
-
-        CBMedico.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        CBMedico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medico" }));
-        CBMedico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        CBMedico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CBMedicoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CBMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 350, 30));
-
-        BPaciente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        BPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agendar.png"))); // NOI18N
-        BPaciente.setText("Agregar Paciente");
-        BPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BPacienteMouseClicked(evt);
-            }
-        });
-        BPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BPacienteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 180, 40));
 
         BCancelar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         BCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar.png"))); // NOI18N
@@ -235,6 +232,8 @@ public class Agendar extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 240, 170, 40));
+        getContentPane().add(TFClavePa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 40, -1));
+        getContentPane().add(TFClaveMeed, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 40, -1));
 
         BExamenes.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         BExamenes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agendar.png"))); // NOI18N
@@ -300,7 +299,6 @@ public class Agendar extends javax.swing.JDialog {
 
         TFNombreExamen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(TFNombreExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 370, 30));
-        getContentPane().add(TFClavePa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 40, -1));
 
         BHabilitar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         BHabilitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificar.png"))); // NOI18N
@@ -315,23 +313,6 @@ public class Agendar extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CBMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBMedicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CBMedicoActionPerformed
-
-    private void BPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BPacienteMouseClicked
-
-
-    }//GEN-LAST:event_BPacienteMouseClicked
-
-    private void BPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BPacienteActionPerformed
-
-        Pacientes mc = new Pacientes(null, true, TFClavePa, TFNombrePa);
-        mc.setVisible(true);
-        TFNombrePa.setEnabled(false);
-
-    }//GEN-LAST:event_BPacienteActionPerformed
 
     private void BHabilitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BHabilitarActionPerformed
 
@@ -366,7 +347,7 @@ public class Agendar extends javax.swing.JDialog {
         String Resultados = CBResultados.getSelectedItem().toString().split("-")[0];
         String NoPaciente = TFClavePa.getText();
         String Prueba = TFPrueba.getText();
-        String NoMedico = CBMedico.getSelectedItem().toString().split("-")[0];
+        String NoMedico = "";
 
         if (TDatos.getRowCount() > 0) {
             String consulta = "INSERT INTO TCita "
@@ -459,6 +440,38 @@ public class Agendar extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_CBPerfilActionPerformed
 
+    private void TFNombreMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFNombreMedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFNombreMedActionPerformed
+
+    private void TFNombrePaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFNombrePaActionPerformed
+    
+    }//GEN-LAST:event_TFNombrePaActionPerformed
+
+    private void TFNombrePaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFNombrePaKeyPressed
+           TFNombrePa.addKeyListener(new KeyAdapter() {
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_F1) {
+            Pacientes mc = new Pacientes(null, true, TFClavePa, TFNombrePa);
+            mc.setVisible(true);
+            TFNombrePa.setEnabled(false);
+        }
+    }
+});
+    }//GEN-LAST:event_TFNombrePaKeyPressed
+
+    private void TFNombreMedKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFNombreMedKeyPressed
+        TFNombreMed.addKeyListener(new KeyAdapter() {
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_F2) {
+        mostrarMedicos mc = new mostrarMedicos(null, true, TFClaveMeed, TFNombreMed);
+        mc.setVisible(true);
+        TFNombreMed.setEnabled(false);
+            }
+    }
+});
+    }//GEN-LAST:event_TFNombreMedKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -507,20 +520,20 @@ public class Agendar extends javax.swing.JDialog {
     private javax.swing.JButton BExamenes;
     private javax.swing.JButton BHabilitar;
     private javax.swing.JButton BNuevo;
-    private javax.swing.JButton BPaciente;
     private javax.swing.JButton BQuitar;
     private javax.swing.JComboBox<String> CBEstado;
     private javax.swing.JComboBox<String> CBGrupo;
-    private javax.swing.JComboBox<String> CBMedico;
     private javax.swing.JComboBox<String> CBPerfil;
     private javax.swing.JComboBox<String> CBResultados;
     private com.toedter.calendar.JDateChooser SPFecha;
     private javax.swing.JSpinner SPHora;
     private javax.swing.JTable TDatos;
     private javax.swing.JTextField TFClaveExamen;
+    private javax.swing.JTextField TFClaveMeed;
     private javax.swing.JTextField TFClavePa;
     private javax.swing.JTextField TFExamen;
     private javax.swing.JTextField TFNombreExamen;
+    private javax.swing.JTextField TFNombreMed;
     private javax.swing.JTextField TFNombrePa;
     private javax.swing.JTextField TFPrueba;
     private javax.swing.JLabel jLabel1;
