@@ -624,6 +624,56 @@ public class ConexionBDV {
             e.printStackTrace();
         }
     }
+    public void mostrarDatosParaGruposBuscador(JTable tabla, JTextField textField) {
+        DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
+        modeloT.setRowCount(0);
+
+        String nombre = textField.getText();
+
+        String query = "SELECT NoGrupo, Nombre FROM grupo "
+                + "WHERE Nombre LIKE ?";
+
+        try {
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, "%" + nombre + "%");
+
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int Clave = rs.getInt("NoGrupo");
+                String Nombre = rs.getString("Nombre");
+
+                Object[] fila = {Clave, Nombre};
+                modeloT.addRow(fila);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void mostrarDatosParaPerfilesBuscador(JTable tabla, JTextField textField) {
+        DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
+        modeloT.setRowCount(0);
+
+        String nombre = textField.getText();
+
+        String query = "SELECT NoPerfil, Nombre FROM perfil "
+                + "WHERE Nombre LIKE ?";
+
+        try {
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, "%" + nombre + "%");
+
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int Clave = rs.getInt("NoPerfil");
+                String Nombre = rs.getString("Nombre");
+
+                Object[] fila = {Clave, Nombre};
+                modeloT.addRow(fila);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void mostrarDatosParaMedicosBuscador(JTable tabla, JTextField textField) {
         DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
@@ -657,40 +707,7 @@ public class ConexionBDV {
     }
 
     public void mostrarDatosParaCitasBuscador(JTable tabla, JTextField textField, JTextField Fecha) {
-//        DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
-//        modeloT.setRowCount(0); // Eliminar filas
-//
-//        String nombre = textField.getText() ; // Obtener el texto del JTextField
-//        String Fecha1 = Fecha.getText();
-//                
-//
-//        String query = "SELECT ce.idCitaExamen, ce.ExamenInvidual_NoExamen, ei.Nombre AS NombreExamen, ce.tcita_NoCita, ce.tcita_NoMedico, ce.tcita_NoPaciente, p.Nombre AS Nombre, pe.NoPametroExa "
-//                + "FROM citaexamen ce "
-//                + "INNER JOIN tpacientes p ON ce.tcita_NoPaciente = p.NoPaciente "
-//                + "INNER JOIN ExamenInvidual ei ON ce.ExamenInvidual_NoExamen = ei.NoExamen "
-//                + "INNER JOIN parametrosexamen pe ON ei.NoExamen = pe.NoExamen " // Ajusta esto según la estructura de tus tablas y nombres de columnas
-//                + "WHERE p.Nombre LIKE ? "
-//                + "GROUP BY ce.idCitaExamen ";
-//
-//        try {
-//            PreparedStatement pstmt = con.prepareStatement(query);
-//            pstmt.setString(1, "%" + nombre + "%");
-//
-//            rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                int idCitaExamen = rs.getInt("idCitaExamen");
-//                String ExamenInvidual_NoExamen = rs.getString("NombreExamen");
-//                int tcita_NoCita = rs.getInt("tcita_NoCita");
-//                int tcita_NoMedico = rs.getInt("tcita_NoMedico");
-//                String Nombre = rs.getString("Nombre");
-//                String Parametros = rs.getString("NoPametroExa");
-//
-//                Object[] fila = {idCitaExamen, Nombre, ExamenInvidual_NoExamen};
-//                modeloT.addRow(fila);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+
         DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
         modeloT.setRowCount(0); // Limpiar filas de la tabla
 

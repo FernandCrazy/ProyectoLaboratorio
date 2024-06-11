@@ -30,8 +30,6 @@ public class Agendar extends javax.swing.JDialog {
         TFNombreExamen.setEnabled(true);
         this.setLocationRelativeTo(null);
         ConexionBDV cnx = new ConexionBDV();
-        cnx.llenarcomboGrupo2(CBGrupo);
-        cnx.llenarcomboPerfil2(CBPerfil);
         TFExamen.setEnabled(false);
         editor = new JSpinner.DateEditor(SPHora, "HH:mm:ss");
         SPHora.setEditor(editor);
@@ -76,6 +74,9 @@ public class Agendar extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -93,11 +94,7 @@ public class Agendar extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         TDatos = new javax.swing.JTable();
         BQuitar = new javax.swing.JButton();
-        BExamenes = new javax.swing.JButton();
         TFPrueba = new javax.swing.JTextField();
-        CBGrupo = new javax.swing.JComboBox<>();
-        CBPerfil = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         CBResultados = new javax.swing.JComboBox<>();
@@ -113,13 +110,25 @@ public class Agendar extends javax.swing.JDialog {
         setTitle("Agendar Cita");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("- Presione F2 para visualizar los grupos");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("- Presione F3 para visualizar los perfiles");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Presione F4 para visualizar los pacientes");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Presione F2 para visualizar los medicos");
+        jLabel2.setText("Presione F5 para visualizar los medicos");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Presione F1 para visualizar los pacientes");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        jLabel3.setText("- Presione F1 para visualizar los examenes");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
@@ -265,49 +274,10 @@ public class Agendar extends javax.swing.JDialog {
                 BQuitarActionPerformed(evt);
             }
         });
-        getContentPane().add(BQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 170, 40));
-
-        BExamenes.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        BExamenes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agendar.png"))); // NOI18N
-        BExamenes.setText("Agregar Examen");
-        BExamenes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BExamenes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BExamenesMouseClicked(evt);
-            }
-        });
-        BExamenes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BExamenesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BExamenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 40));
+        getContentPane().add(BQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 170, 40));
 
         TFPrueba.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(TFPrueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 370, 30));
-
-        CBGrupo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        CBGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grupos" }));
-        CBGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CBGrupoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CBGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, 170, -1));
-
-        CBPerfil.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        CBPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perfiles" }));
-        CBPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CBPerfilActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CBPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 180, 30));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("SELECCIONA UN EXAMEN Y/O SELECCIONA POR GRUPO O PERFIL");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondo-blanco-superficie-futurista-mini.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 490));
@@ -381,7 +351,7 @@ public class Agendar extends javax.swing.JDialog {
         String Resultados = CBResultados.getSelectedItem().toString().split("-")[0];
         String NoPaciente = TFClavePa.getText();
         String Prueba = TFPrueba.getText();
-        String NoMedico = "";
+        String NoMedico = TFClaveMeed.getText();
 
         if (TDatos.getRowCount() > 0) {
             String consulta = "INSERT INTO TCita "
@@ -424,56 +394,6 @@ public class Agendar extends javax.swing.JDialog {
         cnx.cerrarConexiones();
     }//GEN-LAST:event_TDatosMouseClicked
 
-    private void BExamenesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BExamenesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BExamenesMouseClicked
-
-    private void BExamenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BExamenesActionPerformed
-        ExamenesParaCita gr = new ExamenesParaCita(null, true, TFClaveExamen, TFNombreExamen);
-        gr.setVisible(true);
-        if (TFNombreExamen.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "El nombre no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            String nombrePaciente = TFNombreExamen.getText();
-            DefaultTableModel model = (DefaultTableModel) TDatos.getModel();
-
-            // Verificar si el nombre ya está en la tabla
-            boolean nombreRepetido = false;
-            for (int i = 0; i < model.getRowCount(); i++) {
-                if (nombrePaciente.equals(model.getValueAt(i, 1))) {
-                    nombreRepetido = true;
-                    break;
-                }
-            }
-
-            if (!nombreRepetido) {
-                // Si el nombre no está en la tabla, agregarlo
-                String clavePaciente = TFClaveExamen.getText();
-                Object[] fila = {clavePaciente, nombrePaciente};
-                model.addRow(fila);
-            } else {
-                JOptionPane.showMessageDialog(null, "El Examen ya existe", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-
-    }//GEN-LAST:event_BExamenesActionPerformed
-
-    private void CBGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBGrupoActionPerformed
-        ConexionBDV cnx = new ConexionBDV();
-        String nombreGrupo = (String) CBGrupo.getSelectedItem();
-        if (nombreGrupo != null) {
-            cnx.cargarExamenesGrupo(TDatos, nombreGrupo);
-        }
-    }//GEN-LAST:event_CBGrupoActionPerformed
-
-    private void CBPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBPerfilActionPerformed
-        ConexionBDV cnx = new ConexionBDV();
-        String nombrePerfil = (String) CBPerfil.getSelectedItem();
-        if (nombrePerfil != null) {
-            cnx.cargarExamenesPerfil(TDatos, nombrePerfil);
-        }
-    }//GEN-LAST:event_CBPerfilActionPerformed
-
     private void TFNombreMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFNombreMedActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TFNombreMedActionPerformed
@@ -485,7 +405,7 @@ public class Agendar extends javax.swing.JDialog {
     private void TFNombrePaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFNombrePaKeyPressed
         TFNombrePa.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_F1) {
+                if (e.getKeyCode() == KeyEvent.VK_F4) {
                     Pacientes mc = new Pacientes(null, true, TFClavePa, TFNombrePa);
                     mc.setVisible(true);
                     TFNombrePa.setEnabled(false);
@@ -497,7 +417,7 @@ public class Agendar extends javax.swing.JDialog {
     private void TFNombreMedKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFNombreMedKeyPressed
         TFNombreMed.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_F2) {
+                if (e.getKeyCode() == KeyEvent.VK_F5) {
                     mostrarMedicos mc = new mostrarMedicos(null, true, TFClaveMeed, TFNombreMed);
                     mc.setVisible(true);
                     TFNombreMed.setEnabled(false);
@@ -507,15 +427,7 @@ public class Agendar extends javax.swing.JDialog {
     }//GEN-LAST:event_TFNombreMedKeyPressed
 
     private void TDatosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TDatosKeyPressed
-        TDatos.addKeyListener(new KeyAdapter() {
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_F3) {
-                    mostrarMedicos mc = new mostrarMedicos(null, true, TFClaveMeed, TFNombreMed);
-                    mc.setVisible(true);
-                    TFNombreMed.setEnabled(false);
-                }
-            }
-        });
+
 
     }//GEN-LAST:event_TDatosKeyPressed
 
@@ -529,42 +441,9 @@ public class Agendar extends javax.swing.JDialog {
     }//GEN-LAST:event_TFPresionarActionPerformed
 
     private void TFPresionarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFPresionarKeyPressed
-//        TFPresionar.addKeyListener(new KeyAdapter() {
-//            public void keyPressed(KeyEvent e) {
-//                if (e.getKeyCode() == KeyEvent.VK_F3) {
-//                    ExamenesParaCita gr = new ExamenesParaCita(null, true, TFClaveExamen, TFNombreExamen);
-//                    gr.setVisible(true);
-//                    if (TFNombreExamen.getText().isEmpty()) {
-//                        JOptionPane.showMessageDialog(null, "El nombre no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
-//                    } else {
-//                        String nombrePaciente = TFNombreExamen.getText();
-//                        DefaultTableModel model = (DefaultTableModel) TDatos.getModel();
-//
-//                        // Verificar si el nombre ya está en la tabla
-//                        boolean nombreRepetido = false;
-//                        for (int i = 0; i < model.getRowCount(); i++) {
-//                            if (nombrePaciente.equals(model.getValueAt(i, 1))) {
-//                                nombreRepetido = true;
-//                                break;
-//                            }
-//                        }
-//
-//                        if (!nombreRepetido) {
-//                            // Si el nombre no está en la tabla, agregarlo
-//                            String clavePaciente = TFClaveExamen.getText();
-//                            Object[] fila = {clavePaciente, nombrePaciente};
-//                            model.addRow(fila);
-//                        } else {
-//                            JOptionPane.showMessageDialog(null, "El Examen ya existe", "Error", JOptionPane.ERROR_MESSAGE);
-//                        }
-//                    }
-//                }
-//            }else if(e.getKeyCode() == KeyEvent.VK_F4){
-//            
-//        }
-//        });
+
         int keyCode = evt.getKeyCode();
-        if (keyCode == KeyEvent.VK_F3) {
+        if (keyCode == KeyEvent.VK_F1) {
             ExamenesParaCita gr = new ExamenesParaCita(null, true, TFClaveExamen, TFNombreExamen);
             gr.setVisible(true);
             if (TFNombreExamen.getText().isEmpty()) {
@@ -572,6 +451,7 @@ public class Agendar extends javax.swing.JDialog {
             } else {
                 String nombrePaciente = TFNombreExamen.getText();
                 DefaultTableModel model = (DefaultTableModel) TDatos.getModel();
+                TFNombreExamen.setText("");
 
                 // Verificar si el nombre ya está en la tabla
                 boolean nombreRepetido = false;
@@ -591,9 +471,22 @@ public class Agendar extends javax.swing.JDialog {
                     JOptionPane.showMessageDialog(null, "El Examen ya existe", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
-        } else if (keyCode == KeyEvent.VK_F4) {
-            Grupos gr = new Grupos(null, true);
+        } else if (keyCode == KeyEvent.VK_F2) {
+            MostrarGrupos gr = new MostrarGrupos(null, true, TFClaveExamen, TFNombreExamen);
             gr.setVisible(true);
+            ConexionBDV cnx = new ConexionBDV();
+            String nombregrupo = TFNombreExamen.getText().trim();
+            if (!nombregrupo.isEmpty()) {
+                cnx.cargarExamenesGrupo(TDatos, nombregrupo);
+            }
+        } else if (keyCode == KeyEvent.VK_F3) {
+            MostrarPerfiles gr = new MostrarPerfiles(null, true, TFClaveExamen, TFNombreExamen);
+            gr.setVisible(true);
+            ConexionBDV cnx = new ConexionBDV();
+            String nombrePerfil = TFNombreExamen.getText().trim();
+            if (!nombrePerfil.isEmpty()) {
+                cnx.cargarExamenesPerfil(TDatos, nombrePerfil);
+            }
         }
     }//GEN-LAST:event_TFPresionarKeyPressed
 
@@ -642,13 +535,10 @@ public class Agendar extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BCancelar;
-    private javax.swing.JButton BExamenes;
     private javax.swing.JButton BHabilitar;
     private javax.swing.JButton BNuevo;
     private javax.swing.JButton BQuitar;
     private javax.swing.JComboBox<String> CBEstado;
-    private javax.swing.JComboBox<String> CBGrupo;
-    private javax.swing.JComboBox<String> CBPerfil;
     private javax.swing.JComboBox<String> CBResultados;
     private com.toedter.calendar.JDateChooser SPFecha;
     private javax.swing.JSpinner SPHora;
@@ -662,7 +552,6 @@ public class Agendar extends javax.swing.JDialog {
     private javax.swing.JTextField TFNombrePa;
     private javax.swing.JTextField TFPresionar;
     private javax.swing.JTextField TFPrueba;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -670,6 +559,9 @@ public class Agendar extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
