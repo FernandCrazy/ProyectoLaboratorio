@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-
 public class fInicio extends javax.swing.JFrame {
 
     public fInicio() {
@@ -445,8 +444,8 @@ public class fInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       MostrarRepor mostrar = new MostrarRepor();
-       mostrar.setVisible(true);
+        MostrarRepor mostrar = new MostrarRepor();
+        mostrar.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
