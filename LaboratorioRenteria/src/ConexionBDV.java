@@ -269,10 +269,18 @@ public class ConexionBDV {
                 + "FROM TCita c "
                 + "INNER JOIN TPacientes p ON c. NoPaciente = p.NoPaciente";
 
+        String query1 = "SELECT ce.idCitaExamen, ce.tcita_NoCita, tc.Hora, tc.Fecha, tc.Estado, tc.Resultados, p.Nombre, p.Telefono, p.NoPaciente  "
+                + "FROM citaexamen ce "
+                + "INNER JOIN tcita tc ON ce.tcita_NoCita = tc.NoCita "
+                + "INNER JOIN tpacientes p ON ce.tcita_NoPaciente = p.NoPaciente";
+  
+//                
+
         try {
-            rs = st.executeQuery(query);
+            rs = st.executeQuery(query1);
             while (rs.next()) {
-                int NoCita = rs.getInt("NoCita");
+                int CitaExamen = rs.getInt("idCitaExamen");
+                int NoCita = rs.getInt("tcita_NoCita");
                 String Hora = rs.getString("Hora");
                 String Fecha = rs.getString("Fecha");
                 String NoPaciente = rs.getString("NoPaciente");
@@ -280,8 +288,9 @@ public class ConexionBDV {
                 String Resultados = rs.getString("Resultados");
                 String Nombre = rs.getString("Nombre");
                 String Telefono = rs.getString("Telefono");
+//           
 
-                Object[] fila = {NoCita, NoPaciente, Nombre, Telefono, Hora, Fecha, Estado, Resultados};
+                Object[] fila = {CitaExamen, NoCita, NoPaciente, Nombre, Telefono, Hora, Fecha, Estado, Resultados};
                 modeloT.addRow(fila);
 
             }
@@ -624,6 +633,7 @@ public class ConexionBDV {
             e.printStackTrace();
         }
     }
+
     public void mostrarDatosParaGruposBuscador(JTable tabla, JTextField textField) {
         DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
         modeloT.setRowCount(0);
@@ -649,6 +659,7 @@ public class ConexionBDV {
             e.printStackTrace();
         }
     }
+
     public void mostrarDatosParaPerfilesBuscador(JTable tabla, JTextField textField) {
         DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
         modeloT.setRowCount(0);
@@ -1081,40 +1092,40 @@ public class ConexionBDV {
 //        }
 //    }
     void generarReporte(String Sexo, String Nombre, String nombreArchivo, String Fecha) {
-    Map<String, Object> parametros = new HashMap<>();
-    parametros.put("Sexo", Sexo);
-    parametros.put("Nombre", Nombre);
-    parametros.put("Fecha", Fecha);
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("Sexo", Sexo);
+        parametros.put("Nombre", Nombre);
+        parametros.put("Fecha", Fecha);
 
-    try {
-        String rutaReporte = getClass().getResource("reportes/report1.jrxml").getPath().replace("%20", " ");
-        JasperReport reporte = JasperCompileManager.compileReport(rutaReporte);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros, con);
+        try {
+            String rutaReporte = getClass().getResource("reportes/report1.jrxml").getPath().replace("%20", " ");
+            JasperReport reporte = JasperCompileManager.compileReport(rutaReporte);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros, con);
 
-        // Ruta de destino fija
-        String rutaDestino = "C:\\Users\\Fernando Gonzalez\\Desktop\\Trabajos escuela\\Trabajos 7tmo semestre\\Nueva carpeta\\proyectoCarrera\\LaboratorioRenteria\\src\\Analisis";
+            // Ruta de destino fija
+            String rutaDestino = "C:\\Users\\Fernando Gonzalez\\Desktop\\Trabajos escuela\\Trabajos 7tmo semestre\\Nueva carpeta\\proyectoCarrera\\LaboratorioRenteria\\src\\Analisis";
 
-        // Crear directorio si no existe
-        File directorio = new File(rutaDestino);
-        if (!directorio.exists()) {
-            directorio.mkdirs();
-        }
+            // Crear directorio si no existe
+            File directorio = new File(rutaDestino);
+            if (!directorio.exists()) {
+                directorio.mkdirs();
+            }
 
-        // Guardar reporte con el nombre ingresado
-        String nombreCompleto = rutaDestino + "/" + nombreArchivo + ".pdf";
-        JasperExportManager.exportReportToPdfFile(jasperPrint, nombreCompleto);
+            // Guardar reporte con el nombre ingresado
+            String nombreCompleto = rutaDestino + "/" + nombreArchivo + ".pdf";
+            JasperExportManager.exportReportToPdfFile(jasperPrint, nombreCompleto);
 
-        System.out.println("Reporte guardado exitosamente en: " + nombreCompleto);
+            System.out.println("Reporte guardado exitosamente en: " + nombreCompleto);
 
 //        // Mostrar reporte en visor
 //        JasperViewer viewer = new JasperViewer(jasperPrint, false);
 //        viewer.setTitle("Reporte Resultados");
 //        viewer.setVisible(true);
 //        viewer.setAlwaysOnTop(true);
-    } catch (Exception e) {
-        e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
 
     void MostrarReporte(String Sexo, String Nombre, String nombreArchivo, String Fecha) {
 
@@ -1160,7 +1171,7 @@ public class ConexionBDV {
         return datos;
     }
 
-    void buscarPacientes(JTable TablaPacientes, JTextField TFClave, JTextField TFNombre,JComboBox CBSexo, JTextField TFEdad, JTextField TFNacimiento, JTextField TFRFC, JTextField TFDireccion, JTextField TFTelefonoCel, JTextField TFTelefono, JTextField TFCurp, JTextField TFCiudad, JTextField TFEmail) {
+    void buscarPacientes(JTable TablaPacientes, JTextField TFClave, JTextField TFNombre, JComboBox CBSexo, JTextField TFEdad, JTextField TFNacimiento, JTextField TFRFC, JTextField TFDireccion, JTextField TFTelefonoCel, JTextField TFTelefono, JTextField TFCurp, JTextField TFCiudad, JTextField TFEmail) {
 
         DefaultTableModel modelo = (DefaultTableModel) TablaPacientes.getModel();
         int renglonSeleccionado = TablaPacientes.getSelectedRow();

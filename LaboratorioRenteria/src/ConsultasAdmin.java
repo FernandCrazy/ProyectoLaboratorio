@@ -16,7 +16,6 @@ public class ConsultasAdmin extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         MostrarCita();
         TFClave.setEnabled(false);
-        ConexionBDV cnx = new ConexionBDV();
     }
 
     public void MostrarCita() {
@@ -35,6 +34,7 @@ public class ConsultasAdmin extends javax.swing.JDialog {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        BModificar = new javax.swing.JButton();
         BEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TPrincipal = new javax.swing.JTable();
@@ -57,7 +57,23 @@ public class ConsultasAdmin extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, -1, 250));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 90, 250));
+
+        BModificar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificar.png"))); // NOI18N
+        BModificar.setText("Modificar");
+        BModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BModificarMouseClicked(evt);
+            }
+        });
+        BModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BModificarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 125, -1));
 
         BEliminar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         BEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png"))); // NOI18N
@@ -73,7 +89,7 @@ public class ConsultasAdmin extends javax.swing.JDialog {
                 BEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(BEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 125, -1));
+        getContentPane().add(BEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 125, -1));
 
         TPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         TPrincipal.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -83,11 +99,11 @@ public class ConsultasAdmin extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Clave", "NoPaciente", "Nombre", "Telefono", "Hora", "Fecha", "Estado", "Resultados", "Realizar Examen"
+                "citaexamen", "Clave", "NoPaciente", "Nombre", "Telefono", "Hora", "Fecha", "Estado", "Resultados", "Realizar Examen"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, false, false, false, false, false
+                true, false, true, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -103,15 +119,18 @@ public class ConsultasAdmin extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(TPrincipal);
         if (TPrincipal.getColumnModel().getColumnCount() > 0) {
-            TPrincipal.getColumnModel().getColumn(1).setMinWidth(0);
-            TPrincipal.getColumnModel().getColumn(1).setPreferredWidth(0);
-            TPrincipal.getColumnModel().getColumn(1).setMaxWidth(0);
+            TPrincipal.getColumnModel().getColumn(0).setMinWidth(0);
+            TPrincipal.getColumnModel().getColumn(0).setPreferredWidth(0);
+            TPrincipal.getColumnModel().getColumn(0).setMaxWidth(0);
+            TPrincipal.getColumnModel().getColumn(2).setMinWidth(0);
+            TPrincipal.getColumnModel().getColumn(2).setPreferredWidth(0);
+            TPrincipal.getColumnModel().getColumn(2).setMaxWidth(0);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, 690, 270));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 700, 270));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorio23.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 720, 390));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 730, 390));
 
         TFClave.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         TFClave.addActionListener(new java.awt.event.ActionListener() {
@@ -171,8 +190,8 @@ public class ConsultasAdmin extends javax.swing.JDialog {
 
         if (fila_seleccionada != -1) { 
         ConsultaExamenes fme = new ConsultaExamenes(null, true,
-                TPrincipal.getValueAt(fila_seleccionada, 2).toString(),
-                TPrincipal.getValueAt(fila_seleccionada, 5).toString());
+                TPrincipal.getValueAt(fila_seleccionada, 3).toString(),
+                TPrincipal.getValueAt(fila_seleccionada, 6).toString());
 
         this.dispose();
         fme.setVisible(true);
@@ -185,6 +204,14 @@ public class ConsultasAdmin extends javax.swing.JDialog {
     private void TFNoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFNoPacienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TFNoPacienteActionPerformed
+
+    private void BModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BModificarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BModificarMouseClicked
+
+    private void BModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,6 +257,7 @@ public class ConsultasAdmin extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BEliminar;
+    private javax.swing.JButton BModificar;
     private javax.swing.JTextField TFClave;
     private javax.swing.JTextField TFNoPaciente;
     private javax.swing.JTable TPrincipal;
